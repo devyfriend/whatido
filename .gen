@@ -1,0 +1,59 @@
+<?php
+
+function processDirectory($dirPath) {
+    // Check if the directory exists
+    if (!is_dir($dirPath)) {
+        echo "Directory does not exist or cannot be read.\n";
+        return;
+    }
+
+    // Open the directory
+    $dir = opendir($dirPath);
+
+	$res = [];
+
+    // Loop through the directory
+    while (false !== ($entry = readdir($dir))) {
+        // Skip . and .. entries
+        if ($entry == "." || $entry == "..") {
+            continue;
+        }
+
+        $res[] = $filePath = "/images/" . $entry;
+
+        // Check if it's a file (not a directory)
+        if (is_file($filePath)) {
+            //echo "Processing file: $entry\n";
+
+            // Here you can perform operations on each file
+            // For example, reading or manipulating the file content
+
+            // Example: Print file info
+            //echo " - File Size: " . filesize($filePath) . " bytes\n";
+            //echo " - Last modified: " . date("Y-m-d H:i:s", filemtime($filePath)) . "\n";
+
+            // Example: Reading file content
+            //if ($fileContent = file_get_contents($filePath)) {
+            //    // Do something with the content, e.g., print first 100 characters
+            //    echo " - Content snippet: " . substr($fileContent, 0, 100) . "\n";
+            //}
+
+            //echo "<br/><br />";
+        }
+    }
+
+    // Close the directory handle
+    closedir($dir);
+
+	return $res;
+}
+
+// Example usage
+$directoryPath = "/var/www/html/whatido/images";
+$res = processDirectory($directoryPath);
+
+foreach($res as $k=>$v):
+
+?>
+<div class="card"><img src="<?=$v?>" /></div>
+<?php endforeach; ?>

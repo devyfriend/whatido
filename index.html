@@ -1,11 +1,177 @@
+<!--https://devyfriend.github.io/whatido/-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>what i do</title>
-</head>
-<body>
-hello world
-</body>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		>
+		<title>what i do</title>
+		<style>
+			body {
+				background-color: #f7f8f9;
+				font-family: sans-serif;
+				padding: 2rem;
+			}
+
+			.gallery {
+				column-count: 4;
+				column-width: 200px;
+				column-gap: 2rem;
+			}
+
+			.card {
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+				border-radius: 12px;
+				transform: translateY(0);
+				transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+			}
+
+			.card:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(3, 169, 244, 0.72);
+				opacity: 0;
+				transition: opacity 0.6s ease;
+			}
+
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: translateZ(0);
+				transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+			}
+
+			.card:hover {
+				transform: translateY(-6px);
+				box-shadow: rgba(0, 0, 0, 0.5) 0 12px 24px -12px;
+			}
+
+			.card:hover:after {
+				opacity: 1;
+			}
+
+			.card:hover img {
+				transform: scale(1.05);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="gallery">
+
+			<div class="card"><img src="./images/537562_4535032225627_1575207273_n_4535032225627.jpg" /></div>
+			<div class="card"><img src="./images/36725244_10214264162069720_5195081107099353088_n_10214264161989718.jpg" /></div>
+			<div class="card"><img src="./images/540528_10200379854850717_1340581216_n_10200379854850717.jpg" /></div>
+			<div class="card"><img src="./images/301036_4535038105774_512100864_n_4535038105774.jpg" /></div>
+			<div class="card"><img src="./images/1239155_10201359353697576_1525026485_o_10201359353697576.jpg" /></div>
+			<div class="card"><img src="./images/525028_4535033665663_1589516700_n_4535033665663.jpg" /></div>
+			<div class="card"><img src="./images/66763_4535046985996_1616676544_n_4535046985996.jpg" /></div>
+			<div class="card"><img src="./images/430856_4535040865843_26291917_n_4535040865843.jpg" /></div>
+			<div class="card"><img src="./images/305337_4535041225852_524969669_n_4535041225852.jpg" /></div>
+			<div class="card"><img src="./images/563862_4535042265878_887304222_n_4535042265878.jpg" /></div>
+			<div class="card"><img src="./images/65110_4535047146000_693235976_n_4535047146000.jpg" /></div>
+			<div class="card"><img src="./images/16174697_10210110790718032_1122456083916746015_n_10210110790718032.jpg" /></div>
+			<div class="card"><img src="./images/16252109_10210122574132610_7114064664038627218_o_10210122574132610.jpg" /></div>
+			<div class="card"><img src="./images/32316_4535039825817_1316052266_n_4535039825817.jpg" /></div>
+			<div class="card"><img src="./images/28774_4535035265703_139653226_n_4535035265703.jpg" /></div>
+			<div class="card"><img src="./images/16252299_10210110791278046_4409777508128044249_o_10210110791278046.jpg" /></div>
+			<div class="card"><img src="./images/546750_4535048426032_974714894_n_4535048426032.jpg" /></div>
+			<div class="card"><img src="./images/305306_4535047826017_905432815_n_4535047826017.jpg" /></div>
+			<div class="card"><img src="./images/224888_4535047386006_747887991_n_4535047386006.jpg" /></div>
+			<div class="card"><img src="./images/540528_10200379854890718_1511458653_n_10200379854890718.jpg" /></div>
+			<div class="card"><img src="./images/21731568_10212095232407834_7668824952130132326_o_10212095232407834.jpg" /></div>
+			<div class="card"><img src="./images/64025_4535033385656_932998804_n_4535033385656.jpg" /></div>
+			<div class="card"><img src="./images/16179252_10210110792318072_2651591170883211110_o_10210110792318072.jpg" /></div>
+			<div class="card"><img src="./images/461173086_10229186892368651_254500485123510325_n_10229186892328650.jpg" /></div>
+			<div class="card"><img src="./images/64006_4535051226102_915415163_n_4535051226102.jpg" /></div>
+			<div class="card"><img src="./images/598495_4535044505934_1286573953_n_4535044505934.jpg" /></div>
+			<div class="card"><img src="./images/399233_4535049186051_1978631007_n_4535049186051.jpg" /></div>
+			<div class="card"><img src="./images/64087_4535045465958_1739432264_n_4535045465958.jpg" /></div>
+			<div class="card"><img src="./images/576274_4535050266078_225761772_n_4535050266078.jpg" /></div>
+			<div class="card"><img src="./images/9178_4535042665888_1273185137_n_4535042665888.jpg" /></div>
+			<div class="card"><img src="./images/547365_4535051826117_576244900_n_4535051826117.jpg" /></div>
+			<div class="card"><img src="./images/484892_10202305675635033_433722016_n_10202305675635033.jpg" /></div>
+			<div class="card"><img src="./images/3894_4535035065698_1175227096_n_4535035065698.jpg" /></div>
+			<div class="card"><img src="./images/526012_4535048266028_684354486_n_4535048266028.jpg" /></div>
+			<div class="card"><img src="./images/859924_4996516522446_389481362_o_4996516522446.jpg" /></div>
+			<div class="card"><img src="./images/537706_4535041785866_445000070_n_4535041785866.jpg" /></div>
+			<div class="card"><img src="./images/64059_4535032865643_936770455_n_4535032865643.jpg" /></div>
+			<div class="card"><img src="./images/9685_4535047466008_1918213800_n_4535047466008.jpg" /></div>
+			<div class="card"><img src="./images/576457_4535036345730_1143384780_n_4535036345730.jpg" /></div>
+			<div class="card"><img src="./images/184398_4535051746115_1485319186_n_4535051746115.jpg" /></div>
+			<div class="card"><img src="./images/21752742_10212095232967848_2468895132551647426_o_10212095232967848.jpg" /></div>
+			<div class="card"><img src="./images/521560_4535038745790_266004558_n_4535038745790.jpg" /></div>
+			<div class="card"><img src="./images/40673779_10214681683267489_1656447841003896832_n_10214681683227488.jpg" /></div>
+			<div class="card"><img src="./images/196047_4535050626087_1370449089_n_4535050626087.jpg" /></div>
+			<div class="card"><img src="./images/1506054_10202305703075719_1106344028_n_10202305703075719.jpg" /></div>
+			<div class="card"><img src="./images/21688429_10212165197956929_4961809415867290156_o_10212165197956929.jpg" /></div>
+			<div class="card"><img src="./images/1048420_10200756418664577_738868231_o_10200756418664577.jpg" /></div>
+			<div class="card"><img src="./images/181856_4535050026072_524968699_n_4535050026072.jpg" /></div>
+			<div class="card"><img src="./images/36601515_10214264161909716_5049461976095260672_n_10214264161869715.jpg" /></div>
+			<div class="card"><img src="./images/21743698_10212095233247855_5978751302762575290_o_10212095233247855.jpg" /></div>
+			<div class="card"><img src="./images/156112_4535034065673_14058150_n_4535034065673.jpg" /></div>
+			<div class="card"><img src="./images/28772_4535037665763_1557816006_n_4535037665763.jpg" /></div>
+			<div class="card"><img src="./images/859547_4996505762177_1160305743_o_4996505762177.jpg" /></div>
+			<div class="card"><img src="./images/40588364_10214681681547446_7134436077363789824_n_10214681681467444.jpg" /></div>
+			<div class="card"><img src="./images/399172_4535043225902_1290996796_n_4535043225902.jpg" /></div>
+			<div class="card"><img src="./images/44576_4535049466058_1992000555_n_4535049466058.jpg" /></div>
+			<div class="card"><img src="./images/16179035_10210110791878061_122289074233927729_o_10210110791878061.jpg" /></div>
+			<div class="card"><img src="./images/546664_4535050186076_1186621871_n_4535050186076.jpg" /></div>
+			<div class="card"><img src="./images/1941534_10202526624438615_1562184815_o_10202526624438615.jpg" /></div>
+			<div class="card"><img src="./images/21950963_10212165194196835_8857234419999584575_o_10212165194196835.jpg" /></div>
+			<div class="card"><img src="./images/227172_4535046905994_1526734860_n_4535046905994.jpg" /></div>
+			<div class="card"><img src="./images/537495_4535049386056_720394238_n_4535049386056.jpg" /></div>
+			<div class="card"><img src="./images/16179103_10210110791678056_4164625675130579580_o_10210110791678056.jpg" /></div>
+			<div class="card"><img src="./images/859547_4996505722176_194119127_o_4996505722176.jpg" /></div>
+			<div class="card"><img src="./images/548784_4996516402443_1355565431_n_4996516402443.jpg" /></div>
+			<div class="card"><img src="./images/8894_4535046065973_1664173306_n_4535046065973.jpg" /></div>
+			<div class="card"><img src="./images/16300352_10210110794558128_3964702769127413409_o_10210110794558128.jpg" /></div>
+			<div class="card"><img src="./images/29541_4535042025872_1155770039_n_4535042025872.jpg" /></div>
+			<div class="card"><img src="./images/21741325_10212095209447260_776282823441242705_o_10212095209447260.jpg" /></div>
+			<div class="card"><img src="./images/1506054_10202305703115720_696722089_n_10202305703115720.jpg" /></div>
+			<div class="card"><img src="./images/282043_4535034105674_1797291870_n_4535034105674.jpg" /></div>
+			<div class="card"><img src="./images/399289_4535037385756_1584201574_n_4535037385756.jpg" /></div>
+			<div class="card"><img src="./images/525982_4535034345680_1304581934_n_4535034345680.jpg" /></div>
+			<div class="card"><img src="./images/154781_4535034625687_868560783_n_4535034625687.jpg" /></div>
+			<div class="card"><img src="./images/184526_4535041425857_2063027741_n_4535041425857.jpg" /></div>
+			<div class="card"><img src="./images/16178938_10210122574092609_8550420611466858272_o_10210122574092609.jpg" /></div>
+			<div class="card"><img src="./images/406708_4535050546085_1682959901_n_4535050546085.jpg" /></div>
+			<div class="card"><img src="./images/970566_10200666131167446_1561683410_n_10200666131167446.jpg" /></div>
+			<div class="card"><img src="./images/196177_4535035945720_395051181_n_4535035945720.jpg" /></div>
+			<div class="card"><img src="./images/859924_4996516562447_1349051404_o_4996516562447.jpg" /></div>
+			<div class="card"><img src="./images/546734_4535037025747_91912493_n_4535037025747.jpg" /></div>
+			<div class="card"><img src="./images/1941534_10202526624398614_1011994700_o_10202526624398614.jpg" /></div>
+			<div class="card"><img src="./images/598619_4535038905794_686965208_n_4535038905794.jpg" /></div>
+			<div class="card"><img src="./images/6391_4535048466033_2036842753_n_4535048466033.jpg" /></div>
+			<div class="card"><img src="./images/546589_4535032985646_1843756006_n_4535032985646.jpg" /></div>
+			<div class="card"><img src="./images/37091_4535050426082_1391571943_n_4535050426082.jpg" /></div>
+			<div class="card"><img src="./images/60901_4535043465908_1334854467_n_4535043465908.jpg" /></div>
+			<div class="card"><img src="./images/859924_4996516482445_403186192_o_4996516482445.jpg" /></div>
+			<div class="card"><img src="./images/546725_4535038985796_943873111_n_4535038985796.jpg" /></div>
+			<div class="card"><img src="./images/1008457_10200666131127445_422998493_o_10200666131127445.jpg" /></div>
+			<div class="card"><img src="./images/16299735_10210122574252613_4509122326089221923_o_10210122574252613.jpg" /></div>
+			<div class="card"><img src="./images/18022_4535048026022_1322242317_n_4535048026022.jpg" /></div>
+
+		</div>
+
+	</body>
+
 </html>
