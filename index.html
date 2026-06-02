@@ -395,28 +395,40 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			var imgs = document.querySelectorAll("img[data-src]");
-			var delay = 800;
+			var queue = [];
+			var processing = false;
+			var stagger = 200;
+
 			function reveal(img) {
 				var card = img.closest(".card");
 				img.src = img.dataset.src;
-				img.onload = function () {if (card) card.classList.add("loaded");};
-				img.onerror = function () {if (card) card.classList.add("loaded");};
+				img.onload = function () { if (card) card.classList.add("loaded"); };
+				img.onerror = function () { if (card) card.classList.add("loaded"); };
 			}
+
+			function processQueue() {
+				if (queue.length === 0) { processing = false; return; }
+				processing = true;
+				reveal(queue.shift());
+				setTimeout(processQueue, stagger);
+			}
+
 			if ("IntersectionObserver" in window) {
 				var obs = new IntersectionObserver(function (entries) {
 					entries.forEach(function (e) {
 						if (e.isIntersecting) {
-							var target = e.target;
-							obs.unobserve(target);
-							setTimeout(function () { reveal(target); }, delay);
+							obs.unobserve(e.target);
+							queue.push(e.target);
+							if (!processing) processQueue();
 						}
 					});
 				}, {rootMargin: "200px"});
-				imgs.forEach(function (img) {obs.observe(img);});
+				imgs.forEach(function (img) { obs.observe(img); });
 			} else {
-				imgs.forEach(function (img) {
-					setTimeout(function () { reveal(img); }, delay);
+				Array.prototype.forEach.call(imgs, function (img) {
+					queue.push(img);
 				});
+				processQueue();
 			}
 		});
 	</script>
